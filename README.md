@@ -24,6 +24,7 @@ TicketBookingSystem/
 │       ├── TicketBookingSystem.java
 │       ├── TicketCounter.java
 │       └── BookingTask.java
+├── img.png
 └── README.md
 ```
 

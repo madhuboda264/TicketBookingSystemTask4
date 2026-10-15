@@ -2,21 +2,25 @@ package ticketbooking;
 
 public class TicketCounter {
     private int availableTickets;
-    public TicketCounter(int availableTickets){
-        this.availableTickets=availableTickets;
+
+    public TicketCounter(int availableTickets) {
+        this.availableTickets = availableTickets;
     }
-    public synchronized void bookTickert(String costumerName){
-    if(availableTickets > 0){
-        System.out.println(costumerName+ "is booking Tickert.");
-        availableTickets--;
-        System.out.println("Booking successful for "+costumerName);
-        System.out.println(" Remaning Tickerts "+availableTickets);
-        System.out.println("------------------------------");
-    }else {
-        System.out.println("Booking failed for "+costumerName +" : No Tickert Available. " );
+
+    public synchronized void bookTicket(String customerName) {
+        if (availableTickets > 0) {
+            System.out.println(customerName + " is booking a ticket.");
+            availableTickets--;
+            System.out.println("Booking successful for " + customerName);
+            System.out.println("Remaining tickets: " + availableTickets);
+            System.out.println("------------------------------");
+        } else {
+            System.out.println("Booking failed for " + customerName
+                    + ": No tickets available.");
+        }
     }
-    }
-    public synchronized int getAvailableTickets(){
+
+    public synchronized int getAvailableTickets() {
         return availableTickets;
     }
 }
